@@ -1,7 +1,12 @@
 spring:
   application:
     name: "demo"
+
   kafka:
-    bootstrap-servers: "localhost:9092"
+    bootstrap-servers: "localhost:9093"  # Adresse des Kafka-Brokers
     consumer:
-      group-id: "myGroup"
+      group-id: "myGroup"  # Consumer-Gruppe
+      auto-offset-reset: "earliest"  # Stellt sicher, dass Nachrichten ab Anfang gelesen werden
+
+  server:
+    port: 8081  # Standardport für Spring Boot Webanwendung
